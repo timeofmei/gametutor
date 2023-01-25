@@ -18,7 +18,7 @@ public:
         setTex(path);
     }
 
-    ~SpriteComponent() {
+    ~SpriteComponent() override {
         SDL_DestroyTexture(texture);
     }
 
@@ -34,10 +34,10 @@ public:
     }
 
     void update() override {
-        destRect.x = (int) transform->x();
-        destRect.y = (int) transform->y();
+        destRect.x = static_cast<int>(transform->x());
+        destRect.y = static_cast<int>(transform->y());
         destRect.w = transform->width * transform->scale;
-        destRect.h = transform->height * transform -> scale;
+        destRect.h = transform->height * transform->scale;
     }
 
     void draw() override {
