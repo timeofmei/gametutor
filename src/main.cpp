@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include "Game.hpp"
+#define main main
 
 int main(int argc, char *argv[]) {
 

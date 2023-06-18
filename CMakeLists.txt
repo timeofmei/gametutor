@@ -3,8 +3,15 @@ set(CMAKE_CXX_STANDARD 20)
 
 project(game)
 
-include_directories(/opt/homebrew/include include)
-link_directories(/opt/homebrew/lib)
+include_directories(include)
+
+if(WIN32)
+	include_directories(C:/Users/timeofmei/vcpkg/installed/x64-windows/include)
+	link_directories(C:/Users/timeofmei/vcpkg/installed/x64-windows/lib)
+else()
+	include_directories(/opt/homebrew/include)
+	link_directories(/opt/homebrew/lib)
+endif()
 
 find_package(SDL2 REQUIRED)
 
